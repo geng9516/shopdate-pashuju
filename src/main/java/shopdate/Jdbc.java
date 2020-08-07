@@ -14,12 +14,17 @@ public class Jdbc {
 	Statement stmt = null;
 	ResultSet rs = null;
 
-	String DB_URL = "jdbc:postgresql://localhost:5432/chen";
-	String USER = "postgres";
-	String PASS = "postgres";
+//	String DB_URL = "jdbc:postgresql://localhost:5432/chen";
+//	String USER = "postgres";
+//	String PASS = "postgres";
+	
+	String DB_URL = "jdbc:mysql://localhost:3306/shop";
+    String USER = "root";
+    String PASS = "213sos1995";
 
 	public Connection getDb() throws ClassNotFoundException {
-		Class.forName("org.postgresql.Driver");
+		Class.forName("com.mysql.cj.jdbc.Driver");
+//		Class.forName("org.postgresql.Driver");
 		if (conn == null) {
 			try {
 				conn = DriverManager.getConnection(DB_URL, USER, PASS);
