@@ -14,17 +14,10 @@ import org.jsoup.select.Elements;
 
 public class ShopDate {
 	public static void main(String[] args)throws MalformedURLException, IOException {
-
 		List<String> list = new ArrayList<>();
-//		String url = "https://tabelog.com/rstLst/washoku/";
-//		Document document = Jsoup.parse(new URL(url),300000);
-//		Elements element = document.getElementsByClass("c-page-count__num");
-//		int count = Integer.parseInt(element.tagName("strong").eq(2).text());
-//		for (int i = 1; i <= count / 20; i++) {
 		for (int i = 1; i <= 100 / 20; i++) {
 			String url2 = "https://tabelog.com/rstLst/washoku/" + i + "/";
 			Document document4 = Jsoup.parse(new URL(url2), 30000);
-//			 System.out.println(url2);
 			Elements elements = document4.getElementsByClass("list-rst__rst-name-target cpy-rst-name");
 			for (Element el : elements) {
 				String url3 = el.getElementsByClass("list-rst__rst-name-target cpy-rst-name").eq(0).attr("href");
